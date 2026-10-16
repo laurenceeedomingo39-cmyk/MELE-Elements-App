@@ -31,7 +31,9 @@ jobs:
 
       - name: Build APK with Buildozer
         run: |
-          buildozer android debug
+- name: Build APK with Buildozer
+        run: |
+          yes | buildozer -v android debug
 
       - name: Upload resulting APK
         uses: actions/upload-artifact@v3
