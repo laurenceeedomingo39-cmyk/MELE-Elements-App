@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-android:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-22.04
 
     steps:
       - name: Checkout source code
@@ -29,8 +29,7 @@ jobs:
           pip install buildozer
 
       - name: Build APK with Buildozer
-        run: |
-          yes | buildozer -v android debug
+        run: yes | buildozer -v android debug
 
       - name: Upload resulting APK
         uses: actions/upload-artifact@v4
